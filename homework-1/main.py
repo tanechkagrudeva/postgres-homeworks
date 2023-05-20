@@ -56,22 +56,22 @@ def main():
         cursor = conn.cursor()
         for item in data[1:]:
             cursor.execute(f"INSERT INTO customers_data (customer_id, company_name, contact_name)"
-                           f" VALUES ('{item[1]}', '{item[2]}', '{item[3]}')")
+                           f" VALUES ('{item[0]}', '{item[1]}', '{item[2]}')")
 
     data_2 = read_employees_data()
     with conn:
         cursor = conn.cursor()
         for item in data_2[1:]:
             cursor.execute(f"INSERT INTO customers_data (first_name, last_name, title, birth_date, notes)"
-                           f" VALUES ('{item[1]}', '{item[2]}', '{item[3]}','{item[4]}', '{item[5]}')")
+                           f" VALUES ('{item[0]}', '{item[1]}', '{item[2]}','{item[3]}', '{item[4]}')")
 
     data_3 = read_orders_data()
     with conn:
         cursor = conn.cursor()
         for item in data_3[1:]:
             cursor.execute(f"INSERT INTO customers_data (order_id, customer_id, employee_id, order_date,ship_city)"
-                           f" VALUES ('{item[1]}', '{item[2]}', '{item[3]}','{item[4]}', '{item[5]}')")
+                           f" VALUES ('{item[0]}', '{item[1]}', '{item[2]}','{item[3]}', '{item[4]}')")
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     main()
