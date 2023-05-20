@@ -3,36 +3,42 @@
 import psycopg2
 import csv
 
-file_1 = "customers_data.csv"
-file_2 = "employees_data.csv"
-file_3 = "orders_data.csv"
+file_1 = "north_data/customers_data.csv"
+file_2 = "north_data/employees_data.csv"
+file_3 = "north_data/orders_data.csv"
 
 
 def read_customers():
     """Считывает данные из customers_data.csv"""
     dic = []
-    with open(file_1, 'r', encoding='utr-8') as file:
-        file_read = csv.reader(file, delimiter=', ')
+    with open(file_1, 'r', encoding='utf-8') as file:
+        file_read = csv.reader(file, delimiter=',')
         for line in file_read:
             dic.append(line)
+
+    return dic
 
 
 def read_employees_data():
     """Считывает данные из employees_data.csv"""
     dic = []
-    with open(file_2, 'r', encoding='utr-8') as file:
-        file_read = csv.reader(file, delimiter=', ')
+    with open(file_2, 'r', encoding='utf-8') as file:
+        file_read = csv.reader(file, delimiter=',')
         for line in file_read:
             dic.append(line)
+
+    return dic
 
 
 def read_orders_data():
     """Считывает данные из orders_data.csv"""
     dic = []
-    with open(file_3, 'r', encoding='utr-8') as file:
-        file_read = csv.reader(file, delimiter=', ')
+    with open(file_3, 'r', encoding='utf-8') as file:
+        file_read = csv.reader(file, delimiter=',')
         for line in file_read:
             dic.append(line)
+
+    return dic
 
 
 def main():
