@@ -9,7 +9,6 @@ CREATE TABLE customers_data
 
 CREATE TABLE employees_data
 (
-	employees_id int PRIMARY KEY,
 	first_name	varchar(100),
 	last_name varchar(100),
 	title varchar(100),
