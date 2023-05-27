@@ -10,7 +10,8 @@ ALTER TABLE products ADD CONSTRAINT chk_products_discontinued CHECK (discontinue
 SELECT * INTO out_products FROM products WHERE discontinued = 1
 
 -- 4. Удалить из products товары, снятые с продажи (discontinued = 1)
--- Для 4-го пункта может потребоваться удаление ограничения, связанного с foreign_key. Подумайте, как это можно решить, чтобы связь с таблицей order_details все же осталась.
+-- Для 4-го пункта может потребоваться удаление ограничения, связанного с foreign_key. Подумайте, как это можно решить,
+чтобы связь с таблицей order_details все же осталась.
 
-ALTER TABLE products DROP CONSTRAINT fk_order_details;
+ALTER TABLE order_details DROP CONSTRAINT fk_order_details_products;
 DELETE FROM products WHERE discontinued = 1
